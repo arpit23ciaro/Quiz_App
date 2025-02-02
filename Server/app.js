@@ -22,7 +22,7 @@ cloudinaryConnect();
 
 app.use(
     cors({
-      origin: "http://localhost:5173",
+      origin: "*",
       credentials: true,
     })
   );
@@ -51,7 +51,7 @@ app.use('/',quizeRouter);
 
 const io = new Server(server,{
   cors: {
-    origin: "http://localhost:5173",
+    origin: "*",
     methods: ["GET", "POST"],
     reconnectionAttempts: 1
   },

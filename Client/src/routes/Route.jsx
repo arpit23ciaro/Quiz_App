@@ -12,7 +12,7 @@ import PublicRoute from "../components/Auth/PublicRoute";
 import PrivateRoute from "../components/Auth/PrivateRoute";
 import UserProfile from "../pages/UserProfile";
 import UserNavbar from "../components/userSide/UserNavbar";
-import JoiningScreen from "../components/userSide/joiningScreen";
+import JoiningScreen from '../components/userSide/JoiningScreen'
 import FinalScoreBoard from "../components/userSide/FinalScoreBoard";
 import PlayQuiz from "../components/userSide/PlayQuiz";
 import HostQuizPlayScreen from "../components/HostQuizPlayScreen";

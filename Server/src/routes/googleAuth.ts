@@ -2,6 +2,8 @@ import { Router } from "express";
 import passport from "passport";
 import  '../utils/passport.js'
 import cookieParser from 'cookie-parser';
+import { config } from "dotenv";
+config();
 const googleRouter = Router();
 
 googleRouter.use(cookieParser());
@@ -25,7 +27,7 @@ googleRouter.get('/auth/google/callback',
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true,
           })
-        res.redirect(`http://localhost:5173/dashboard/${id}`);
+        res.redirect(`${process.env.FRONTEND_URL}/dashboard/${id}`);
     }
 )
 

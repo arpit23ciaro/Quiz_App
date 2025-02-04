@@ -104,7 +104,7 @@ const forgotPassword = async (email: string) => {
         {upsert:true, new: true }
       );
   
-      const url = `http://localhost:5173/reset-password/${token}`;
+      const url = `${process.env.FRONTEND_URL}/reset-password/${token}`;
   
       const mailUpdate = await mailSender(
         email,

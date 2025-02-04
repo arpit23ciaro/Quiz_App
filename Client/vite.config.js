@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react()],
   base: "/", 
   esbuild:{
-    keepNames:true
+    keepNames:true,
+    minify: true
   }
 })

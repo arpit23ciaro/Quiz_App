@@ -12,6 +12,8 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import {initializeSocket} from './dist/services/socketService.js'
 import userRouter from './dist/routes/user.js'
+import { config } from 'dotenv';
+config();
 
 const app = express();
 const server = createServer(app);
@@ -21,7 +23,7 @@ cloudinaryConnect();
 
 app.use(
     cors({
-      origin: "*",
+      origin: process.env.FRONTEND_URL,
       credentials: true,
     })
   );
@@ -47,13 +49,13 @@ app.get('/',(req,res) =>{
 app.use("/",googleRouter);
 app.use("/",emailRouter);
 app.use('/',userRouter)
-// app.use(auth);
+app.use(auth);
 app.use('/',quizeRouter);
 
 
 const io = new Server(server,{
   cors: {
-    origin: "*",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"],
     reconnectionAttempts: 1
   },

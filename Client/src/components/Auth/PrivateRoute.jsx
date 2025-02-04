@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
     const { isAuthenticated,navLoading } = useUserAuth();
     if(isAuthenticated==null)
         return <div>Loading...</div>
-    return isAuthenticated ? children : <Navigate to='/login' />
+    return isAuthenticated ? <>{children}</> : <Navigate to='/login' />
 
 }
 

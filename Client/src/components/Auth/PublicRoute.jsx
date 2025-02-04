@@ -7,7 +7,7 @@ const PublicRoute = ({children}) => {
     
     if(isAuthenticated==null)
         return <div>Loading...</div>
-    return isAuthenticated ? <Navigate to={`/dashboard/${user.id}`} /> : children;
+    return isAuthenticated ? <Navigate to={`/dashboard/${user.id}`} /> : <>{children}</>;
 }
 
 export default PublicRoute

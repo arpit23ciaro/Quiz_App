@@ -93,7 +93,7 @@ const forgotPassword = (email) => __awaiter(void 0, void 0, void 0, function* ()
             token: token,
             expiryDate: Date.now() + 5 * 60 * 1000,
         }, { upsert: true, new: true });
-        const url = `http://localhost:5173/reset-password/${token}`;
+        const url = `${process.env.FRONTEND_URL}/reset-password/${token}`;
         const mailUpdate = yield mailSender(email, "PASSWORD RESET LINK", `Password reset link ${url}`);
         return {
             success: true,

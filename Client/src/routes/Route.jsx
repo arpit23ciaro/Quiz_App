@@ -23,65 +23,81 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <PublicRoute>
-            <Navbar />
+        <>
+        <Navbar />
             <div className="h-[63px] w-full"></div>
             <Home />
+        </>
         </PublicRoute>
     },
     {
         path: '/login',
         element: <PublicRoute>
+        <>
             <Navbar />
             <div className="h-[63px] w-full"></div>
             <Login />
+            </>
         </PublicRoute>
     },
     {
         path: '/signup',
         element: <PublicRoute>
+        <>
             <Navbar />
             <div className="h-[63px] w-full"></div>
             <Signup />
+            </>
         </PublicRoute>
     },
     {
         path: '/forgot-password',
         element: <PublicRoute>
+        <>
             <Navbar />
             <div className="h-[63px] w-full"></div>
             <ForgotPassword />
+            </>
         </PublicRoute>
     },
     {
         path: '/reset-password/:token',
         element: <PublicRoute>
+        <>
             <Navbar />
             <div className="h-[63px] w-full"></div>
             <ResetPassword />
+            </>
         </PublicRoute>
     },
     {
         path: '/dashboard/:userId',
         element:<PrivateRoute>
+        <>
             <Navbar />
             <div className="h-[63px] w-full"></div>
             <Dashboard />
+            </>
         </PrivateRoute>
     },
     {
         path: '/myQuiz/:quizId',
         element:
         <PrivateRoute>
+        <>
             <Navbar />  
             <CreateQuiz />
+            </>
         </PrivateRoute>
     },
     {
         path:"/quizTitle",
         element:<PrivateRoute>
+        <>
             <Navbar />
             <div className="h-[63px] w-full"></div>
             <QuizTitle />
+            </>
         </PrivateRoute>
     },
     {

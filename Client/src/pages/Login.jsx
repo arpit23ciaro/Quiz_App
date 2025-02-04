@@ -70,7 +70,37 @@ const Login = () => {
     <div className='flex flex-col md:flex-row justify-center items-center mt-16'>
       <img src={img1} className='hidden md:flex' alt="Login Illustration" />
       <div>
-        
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        > {({ isSubmitting }) =>(
+            <Form className=' bg-white rounded-md w-[70%] flex flex-col  p-4 gap-2 md:w-[30%]'>
+              <h2 className='text-black text-3xl text-center'>Login</h2>
+              <div className='flex flex-col'>
+                <label htmlFor='email'>Email</label>
+                <>
+                  <Field type='email' name='email' className='bg-[#C7C7C7] focus:outline-none rounded-lg p-1' placeholder='Enter your email' />
+                  <ErrorMessage name="email" component="div" className="text-red-500" />
+                </>
+              </div>
+              <div className='flex flex-col'>
+                <lable htmlFor='password'>Password</lable>
+                <div className='relative'>
+                  <Field type={toggle ? 'text' : 'password'} name='password' className='bg-[#C7C7C7] focus:outline-none  rounded-lg p-1 w-full' placeholder='Enter your password' />
+                  {
+                    toggle ? <IoEyeOffOutline size={25} className=' absolute right-5 top-1 cursor-pointer' onClick={() => setToggle((prev) => !prev)} /> : <IoEyeOutline size={25} className=' absolute right-5 top-1 cursor-pointer' onClick={() => setToggle((prev) => !prev)} />
+                  }
+                </div>
+                <ErrorMessage name="password" component="div" className="text-red-500" />
+              </div>
+              <Link to='/forgot-password' className=' text-red-500 text-sm underline'>Forgot password</Link>
+              <Button text='Submit' isSubmitting={isSubmitting} />
+              <p className=' self-center text-sm'>New User? <Link to='/signup' className=' underline text-blue-600'>Sign In</Link></p>
+              <FcGoogle className=' self-center mt-3 cursor-pointer' size={30} onClick={() => window.location.href = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/google`} />
+            </Form>
+        )}
+        </Formik>
       </div>
     </div>
   )

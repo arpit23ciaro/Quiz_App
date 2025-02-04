@@ -7,16 +7,16 @@ import { usePlayQuiz } from './context/playQuizContextProvider';
 
 function App() {
   const { setUserId } = usePlayQuiz();
-  useEffect(() => {
-    socket.connect();
-    socket.on('get-user-id', (userId) => {
-      setUserId(userId);
-    })
-    return () => {
-      socket.disconnect();
-      socket.off('get-user-id');
-    };
-  }, []);
+  // useEffect(() => {
+  //   socket.connect();
+  //   socket.on('get-user-id', (userId) => {
+  //     setUserId(userId);
+  //   })
+  //   return () => {
+  //     socket.disconnect();
+  //     socket.off('get-user-id');
+  //   };
+  // }, []);
 
   return (
     <div className='bg-[#00837E] min-h-[100vh]  w-full relative overflow-x-hidden'>

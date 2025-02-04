@@ -13,7 +13,6 @@ import { Server } from "socket.io";
 import {initializeSocket} from './dist/services/socketService.js'
 import userRouter from './dist/routes/user.js'
 
-console.log("rerender")
 const app = express();
 const server = createServer(app);
 const port = process.env.PORT || 4000;

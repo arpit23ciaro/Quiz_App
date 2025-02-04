@@ -39,16 +39,15 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, error: "Internal Server Error" });
 });
 
-
+app.get('/',(req,res) =>{
+  console.log("Welcome to Quiz App");
+  return res.send('Welcome to Quiz App');
+})
 app.use("/",googleRouter);
 app.use("/",emailRouter);
 app.use('/',userRouter)
 app.use(auth);
 app.use('/',quizeRouter);
-app.get('/',(req,res) =>{
-  console.log("Welcome to Quiz App");
-  return res.send('Welcome to Quiz App');
-})
 
 
 const io = new Server(server,{

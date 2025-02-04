@@ -9,7 +9,17 @@ const UserProfile = () => {
     const [imageUrl, setImageUrl] = useState("");
     const [username, setUserName] = useState("");
     const navigate = useNavigate();
-    console.log(username)
+     const { setUserId } = usePlayQuiz();
+      useEffect(() => {
+        socket.connect();
+        socket.on('get-user-id', (userId) => {
+          setUserId(userId);
+        })
+        return () => {
+          socket.disconnect();
+          socket.off('get-user-id');
+        };
+      }, []);
 
     const {quizId} = usePlayQuiz();
     

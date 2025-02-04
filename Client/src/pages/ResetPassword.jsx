@@ -95,7 +95,8 @@ const ResetPassword = () => {
             </div>
             <Button text='Submit' isSubmitting={isSubmitting} />
           </Form>
-        )}</Formik>
+        )}
+        </Formik>
       </div>
     </div>
   )

@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <div className='flex flex-col md:flex-row justify-center items-center mt-16'>
       <img src={img1} className='hidden md:flex' />
-      <Formik
+      {/* <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
@@ -101,7 +101,7 @@ const Login = () => {
         </Form>
         </div>
       )}
-      </Formik>
+      </Formik> */}
     </div>
   )
 }

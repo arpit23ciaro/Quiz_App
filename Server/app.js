@@ -45,7 +45,9 @@ app.use("/",emailRouter);
 app.use('/',userRouter)
 app.use(auth);
 app.use('/',quizeRouter);
-
+app.get('/',(req,res) =>{
+  return res.send('Welcome to Quiz App');
+})
 
 
 const io = new Server(server,{

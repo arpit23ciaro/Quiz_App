@@ -35,8 +35,8 @@ export const router = createBrowserRouter([
         element: <PublicRoute>
         <>
             <Navbar />
-            <div className="h-[63px] w-full"></div>
-            <Login />
+            <div className="h-[63px] w-full">Login page</div>
+            {/* <Login /> */}
             </>
         </PublicRoute>
     },

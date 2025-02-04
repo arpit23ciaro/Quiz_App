@@ -14,7 +14,6 @@ import { QuizItem } from "../models/QuizItem.js";
 import mongoose from "mongoose";
 const checkValidPin = (pin) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log(pin);
         const quizData = yield Quiz.findOne({ pin: pin });
         assert(quizData, "pin not found");
         return {

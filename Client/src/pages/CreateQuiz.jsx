@@ -12,7 +12,6 @@ const CreateQuiz = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [title, setTitle] = useState("")
     const [loading, setLoading] = useState(false)
-    console.log(currentQuestionIndex)
     const initialValue = {
         id: `dummy${questions?.length + 1}`,
         question: "",
@@ -118,7 +117,6 @@ const CreateQuiz = () => {
         try {
             setLoading(true);
             const data = await updateQuestion(formData);
-            console.log(data)
             if (data.data.success) {
                 setSubmitting(false);
                 resetForm();

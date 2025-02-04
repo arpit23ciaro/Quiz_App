@@ -11,7 +11,6 @@ import mongoose, { mongo } from "mongoose";
 
 const checkValidPin = async (pin:string) =>{
     try{
-        console.log(pin)
         const quizData = await Quiz.findOne({pin:pin});
 
         assert(quizData,"pin not found");

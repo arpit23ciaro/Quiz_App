@@ -65,7 +65,6 @@ const Signup = () => {
   };
 
   const handleSubmit =  async(values, { setSubmitting, resetForm }) => {
-    // console.log("Form values:", values);
     try{
       setLoading(true);
       const data = await signup(values.name, values.email, values.password)

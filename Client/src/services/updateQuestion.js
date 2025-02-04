@@ -5,7 +5,6 @@ import { axiosInstance } from "../utils/axios/axiosInstance";
 
 async function updateQuestion(formData) {
     try {
-        console.log(formData)
         const response = await axiosInstance.post(quizEndpoints.UPDATE_QUESTION_API, formData,
             {
                 headers: {

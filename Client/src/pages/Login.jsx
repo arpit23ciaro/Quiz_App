@@ -75,9 +75,11 @@ const Login = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       > {({ isSubmitting }) => (
-        <div>
-          Login page
-        </div>
+        <>
+          <div>
+            Login page
+          </div>
+        </>
       )}
       </Formik>
     </div>

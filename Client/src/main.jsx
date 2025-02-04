@@ -5,9 +5,11 @@ import UserAuthContextProvider from './context/userAuthContextProvider.jsx'
 import PlayQuizContextProvider from './context/playQuizContextProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <UserAuthContextProvider>
-    <PlayQuizContextProvider>
-      <App />
-    </PlayQuizContextProvider>
-  </UserAuthContextProvider>,
+  <React.StrictMode>
+    <UserAuthContextProvider>
+      <PlayQuizContextProvider>
+        <App />
+      </PlayQuizContextProvider>
+    </UserAuthContextProvider>
+  </React.StrictMode>
 )

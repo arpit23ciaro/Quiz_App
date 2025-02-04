@@ -75,6 +75,7 @@ const Login = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       > {({ isSubmitting }) => (
+        <div>
         <Form className=' bg-white rounded-md w-[70%] flex flex-col  p-4 gap-2 md:w-[30%]'>
           <h2 className='text-black text-3xl text-center'>Login</h2>
           <div className='flex flex-col'>
@@ -98,7 +99,9 @@ const Login = () => {
           <p className=' self-center text-sm'>New User? <Link to='/signup' className=' underline text-blue-600'>Sign In</Link></p>
           <FcGoogle className=' self-center mt-3 cursor-pointer' size={30} onClick={()=> window.location.href = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/google`}/>
         </Form>
-      )}</Formik>
+        </div>
+      )}
+      </Formik>
     </div>
   )
 }

@@ -13,7 +13,7 @@ import { useUserAuth } from '../context/userAuthContextProvider'
 const Login = () => {
 
   const [toggle, setToggle] = useState(false);
-  const {setLoading,loading,setToken,setSignupData} = useUserAuth();
+  const { setLoading, loading, setToken, setSignupData } = useUserAuth();
   const navigate = useNavigate();
 
   const validationSchema = Yup.object({
@@ -51,19 +51,19 @@ const Login = () => {
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    try{
+    try {
       setLoading(true);
       const data = await login(values.email, values.password)
-      if(data.data.success){
+      if (data.data.success) {
         setSubmitting(false);
         resetForm();
         navigate(`/dashboard/${data.data.id}`);
-      }  
+      }
     }
-    catch(error){
-      console.log("Error in login api -> ",error)
+    catch (error) {
+      console.log("Error in login api -> ", error)
     }
-    finally{
+    finally {
       setLoading(false);
     }
   };
@@ -75,30 +75,8 @@ const Login = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       > {({ isSubmitting }) => (
-        <div>Login page
-        {/* <Form className=' bg-white rounded-md w-[70%] flex flex-col  p-4 gap-2 md:w-[30%]'>
-          <h2 className='text-black text-3xl text-center'>Login</h2>
-          <div className='flex flex-col'>
-            <label htmlFor='email'>Email</label>
-            <Field type='email' name='email' className='bg-[#C7C7C7] focus:outline-none rounded-lg p-1' placeholder='Enter your email' />
-            <ErrorMessage name="email" component="div" className="text-red-500" />
-          </div>
-          <div className='flex flex-col'>
-            <label htmlFor='password'>Password</label>
-            <div className='relative'>
-              <Field type={toggle?'text':'password'} name='password' className='bg-[#C7C7C7] focus:outline-none  rounded-lg p-1 w-full' placeholder='Enter your password' />
-              {
-                toggle ? <IoEyeOffOutline size={25} className=' absolute right-5 top-1 cursor-pointer' onClick={() => setToggle((prev) => !prev)} /> : <IoEyeOutline size={25} className=' absolute right-5 top-1 cursor-pointer' onClick={() => setToggle((prev) => !prev)} />
-              }
-            </div>
-
-            <ErrorMessage name="password" component="div" className="text-red-500" />
-          </div>
-          <Link to='/forgot-password' className=' text-red-500 text-sm underline'>Forgot password</Link>
-          <Button text='Submit' isSubmitting={isSubmitting} />
-          <p className=' self-center text-sm'>New User? <Link to='/signup' className=' underline text-blue-600'>Sign In</Link></p>
-          <FcGoogle className=' self-center mt-3 cursor-pointer' size={30} onClick={()=> window.location.href = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/google`}/>
-        </Form> */}
+        <div>
+          Login page
         </div>
       )}
       </Formik>

@@ -64,6 +64,8 @@ emailRouter.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, funct
 }));
 emailRouter.post("/logout", auth, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.clearCookie("token", {
+        secure: true,
+        sameSite: "none",
         httpOnly: true
     }).status(200).json({
         success: true,

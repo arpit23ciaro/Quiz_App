@@ -55,6 +55,8 @@ emailRouter.post("/login", async (req, res) => {
 
 emailRouter.post("/logout",auth, async (req ,res) => {
   res.clearCookie("token",{
+    secure:true,
+    sameSite:"none",
     httpOnly:true
   }).status(200).json({
     success:true,

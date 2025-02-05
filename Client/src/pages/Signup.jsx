@@ -92,22 +92,19 @@ const Signup = () => {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         > {({ isSubmitting }) => (
-          <>
+          <div>
             <Form className=' bg-white rounded-md w-[70%] flex flex-col  p-4 gap-2 md:w-[30%]'>
               <h2 className='text-black text-3xl text-center'>Create Account</h2>
-
               <div className='flex flex-col'>
                 <label htmlFor='name'>Name</label>
                 <Field type='text' name='name' className='bg-[#C7C7C7] focus:outline-none rounded-lg p-1' />
                 <ErrorMessage name="name" component="div" className="text-red-500" />
               </div>
-
               <div className='flex flex-col'>
                 <label htmlFor='email'>Email</label>
                 <Field type='email' name='email' className='bg-[#C7C7C7] focus:outline-none rounded-lg p-1' />
                 <ErrorMessage name="email" component="div" className="text-red-500" />
               </div>
-
               <div className='flex flex-col'>
                 <label htmlFor='password'>Password</label>
                 <div className='relative'>
@@ -118,7 +115,6 @@ const Signup = () => {
                 </div>
                 <ErrorMessage name="password" component="div" className="text-red-500" />
               </div>
-
               <div className='flex flex-col'>
                 <label htmlFor='confirmPassword'>Confirm-Password</label>
                 <div className='relative'>
@@ -129,7 +125,6 @@ const Signup = () => {
                 </div>
                 <ErrorMessage name='confirmPassword' component='div' className=' text-red-500' />
               </div>
-
               <div className='flex flex-col'>
                 <label>
                   <Field type="checkbox" name="consent" />
@@ -137,12 +132,11 @@ const Signup = () => {
                 </label>
                 <ErrorMessage name="consent" component="div" className="text-red-500" />
               </div>
-
               <Button text='Submit' isSubmitting={isSubmitting} />
               <p className=' self-center text-sm'>New User? <Link to='/login' className=' underline text-blue-600'>Sign In</Link></p>
               <FcGoogle className=' self-center mt-3 cursor-pointer' size={30} onClick={() => window.location.href = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/google`} />
             </Form>
-          </>
+          </div>
         )}
         </Formik>
       </div>

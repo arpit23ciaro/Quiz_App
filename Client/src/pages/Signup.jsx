@@ -16,7 +16,7 @@ const Signup = () => {
   const [toggle2, setToggle2] = useState(false);
   const navigate = useNavigate();
 
-  const { loading, setLoading } = useUserAuth();
+  const {loading ,setLoading} = useUserAuth();
 
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -64,32 +64,34 @@ const Signup = () => {
     consent: false,
   };
 
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    try {
+  const handleSubmit =  async(values, { setSubmitting, resetForm }) => {
+    try{
       setLoading(true);
       const data = await signup(values.name, values.email, values.password)
-      if (data.data.success) {
+      if(data.data.success){
         setSubmitting(false);
         resetForm();
         navigate('/login');
       }
-
+      
     }
-    catch (error) {
-      console.log("Error in signup api -> ", data.message)
+    catch(error){
+      console.log("Error in signup api -> ",data.message)
     }
-    finally {
+    finally{
       setLoading(false);
     }
   };
 
   return (
-    <div>
+    <div className='flex flex-col md:flex-row justify-center items-center mt-16'>
+      <img src={img1} className='hidden md:flex' />
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       > {({ isSubmitting }) => (
+        <>
         <Form className=' bg-white rounded-md w-[70%] flex flex-col  p-4 gap-2 md:w-[30%]'>
           <h2 className='text-black text-3xl text-center'>Create Account</h2>
 
@@ -139,8 +141,10 @@ const Signup = () => {
           <p className=' self-center text-sm'>New User? <Link to='/login' className=' underline text-blue-600'>Sign In</Link></p>
           <FcGoogle className=' self-center mt-3 cursor-pointer' size={30} onClick={() => window.location.href = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/google`} />
         </Form>
+        </>
       )}
       </Formik>
+
     </div>
   )
 }

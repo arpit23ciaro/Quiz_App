@@ -84,6 +84,7 @@ const Signup = () => {
   };
 
   return (
+    <div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -139,6 +140,7 @@ const Signup = () => {
           <FcGoogle className=' self-center mt-3 cursor-pointer' size={30} onClick={() => window.location.href = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/google`} />
         </Form>
       )}</Formik>
+      </div>
   )
 }
 

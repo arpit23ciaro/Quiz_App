@@ -49,8 +49,6 @@ app.get('/',(req,res) =>{
 app.use("/",googleRouter);
 app.use("/",emailRouter);
 app.use('/',userRouter)
-app.use(auth);
-app.use('/',quizeRouter);
 
 
 const io = new Server(server,{
@@ -61,6 +59,11 @@ const io = new Server(server,{
   },
 });
 initializeSocket(io);
+
+
+app.use(auth);
+app.use('/',quizeRouter);
+
 
 server.listen(port ,()=>{
     console.log(`Server is running on port ${port}`)

@@ -25,7 +25,9 @@ googleRouter.get('/auth/google/callback',
         const  {id ,token}= req.user as {id:string,token:string};
         res.cookie("token", token, {
             maxAge: 7 * 24 * 60 * 60 * 1000,
+            secure:true,
             httpOnly: true,
+            sameSite:"none"
           })
         res.redirect(`${process.env.FRONTEND_URL}/dashboard/${id}`);
     }

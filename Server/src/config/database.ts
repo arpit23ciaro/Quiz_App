@@ -7,7 +7,10 @@ if (!MONGODB_URL) {
 }
 
 const connect = async() => {
-  mongoose.connect(MONGODB_URL)
+  mongoose.connect(MONGODB_URL ,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  } as mongoose.ConnectOptions)
   .then(()=>console.log("Database connected successfully"))
   .catch((error) => {
     console.log("DB connection failed");

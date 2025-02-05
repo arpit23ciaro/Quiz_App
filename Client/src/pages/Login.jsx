@@ -68,16 +68,19 @@ const Login = () => {
 
   return (
     <div className='flex flex-col md:flex-row justify-center items-center mt-16'>
-      <div><img src={img1} className='hidden md:flex' alt="Login Illustration" /></div>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      > {({ isSubmitting }) => (
-        <div>Form</div>
-      )
-      }
-      </Formik>
+      <div>
+        <img src={img1} className='hidden md:flex' alt="Login Illustration" />
+      </div>
+      <div>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        > {({ isSubmitting }) => (
+          <div>Form</div>
+        )}
+        </Formik>
+      </div>
     </div>
   )
 }

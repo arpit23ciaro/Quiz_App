@@ -69,7 +69,8 @@ const ResetPassword = () => {
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
-        > {({ isSubmitting }) => (
+        > 
+        {({ isSubmitting }) => (
           <Form className=' bg-white rounded-md flex flex-col  p-4 gap-2 '>
             <h2 className='text-black text-3xl text-center'>Reset Password</h2>
             <div className='flex flex-col'>

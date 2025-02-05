@@ -84,9 +84,6 @@ const Signup = () => {
   };
 
   return (
-    <>
-    <div className='flex flex-col md:flex-row justify-center items-center mt-16'>
-      <img src={img1} className='hidden md:flex' />
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -142,9 +139,6 @@ const Signup = () => {
           <FcGoogle className=' self-center mt-3 cursor-pointer' size={30} onClick={() => window.location.href = `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/auth/google`} />
         </Form>
       )}</Formik>
-
-    </div>
-    </>
   )
 }
 

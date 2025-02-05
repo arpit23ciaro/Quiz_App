@@ -15,7 +15,10 @@ if (!MONGODB_URL) {
     throw new Error("MONGODB_URL is not defined in the environment variables.");
 }
 const connect = () => __awaiter(void 0, void 0, void 0, function* () {
-    mongoose.connect(MONGODB_URL)
+    mongoose.connect(MONGODB_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
         .then(() => console.log("Database connected successfully"))
         .catch((error) => {
         console.log("DB connection failed");

@@ -17,7 +17,9 @@ googleRouter.get('/auth/google/callback', passport.authenticate('google', {
     const { id, token } = req.user;
     res.cookie("token", token, {
         maxAge: 7 * 24 * 60 * 60 * 1000,
+        secure: true,
         httpOnly: true,
+        sameSite: "none"
     });
     res.redirect(`${process.env.FRONTEND_URL}/dashboard/${id}`);
 });

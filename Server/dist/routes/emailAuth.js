@@ -50,7 +50,9 @@ emailRouter.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, funct
             ? res
                 .cookie("token", data.token, {
                 maxAge: 7 * 24 * 60 * 60 * 1000,
-                httpOnly: true,
+                secure: true,
+                sameSite: "none",
+                httpOnly: true
             })
                 .json({
                 success: data.success,

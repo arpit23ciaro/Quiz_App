@@ -14,7 +14,6 @@ const JoiningScreen = () => {
     const {setQuizId} = usePlayQuiz();
 
 
-
     useEffect(() => {
         socket.on("update-user-list", (userList) => {
             setUser(userList);

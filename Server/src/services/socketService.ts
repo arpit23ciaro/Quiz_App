@@ -14,6 +14,7 @@ export const initializeSocket = (io: Server) => {
   let  rooms: Record<string, Room> = {};
 
   io.on("connection", (socket) => {
+
     console.log("New client connected:", socket.id);
     io.to(socket.id).emit("get-user-id", socket.id);
 

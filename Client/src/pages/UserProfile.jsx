@@ -10,16 +10,6 @@ const UserProfile = () => {
     const [username, setUserName] = useState("");
     const navigate = useNavigate();
      const { setUserId } = usePlayQuiz();
-      useEffect(() => {
-        socket.connect();
-        socket.on('get-user-id', (userId) => {
-          setUserId(userId);
-        })
-        return () => {
-          socket.disconnect();
-          socket.off('get-user-id');
-        };
-      }, []);
 
     const {quizId} = usePlayQuiz();
     

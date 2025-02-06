@@ -55,7 +55,8 @@ const io = new Server(server,{
   cors: {
     origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"],
-    reconnectionAttempts: 1
+    reconnectionAttempts: 1,
+    credentials:true
   },
 });
 initializeSocket(io);

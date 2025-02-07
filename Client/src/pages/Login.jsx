@@ -57,7 +57,6 @@ const Login = () => {
       console.log("data",data)
       if (data.data.success) {
         setSubmitting(false);
-        resetForm();
         navigate(`/dashboard/${data.data.id}`);
       }
     } catch (error) {

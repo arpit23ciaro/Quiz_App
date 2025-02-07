@@ -108,6 +108,7 @@ quizRouter.post("/updateQuestion", async (req: AuthRequest, res) => {
           questionImg,
           optionImgs
         );
+        data.success ? res.json(data) : res.status(404).json(data);
       }
     } else {
       console.log("pending..")

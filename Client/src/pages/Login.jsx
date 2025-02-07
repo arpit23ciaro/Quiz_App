@@ -54,8 +54,8 @@ const Login = () => {
     try {
       setLoading(true);
       const data = await login(values.email, values.password);
-      console.log("data",data)
       if (data.data.success) {
+        console.log("inside login")
         navigate(`/dashboard/${data.data.id}`);
       }
     } catch (error) {

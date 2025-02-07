@@ -15,6 +15,9 @@ const InputImageBox = ({ isSelect, name, isQuestion, text = '', image = null, in
     } else if (!isQuestion && values.options[index]?.optionImg) {
       setImageUrl(values.options[index].optionImg);
     }
+    else{
+      setImageUrl(null);
+    }
   }, [values.questionImg, values.options, index, isQuestion]);
 
   useEffect(() => {

@@ -55,8 +55,8 @@ const Login = () => {
       setLoading(true);
       const data = await login(values.email, values.password);
       if (data.data.success) {
-        console.log("inside login")
-        navigate(`/dashboard/${data.data.id}`);
+        // navigate(`/dashboard/${data.data.id}`);
+        navigate('/');
       }
     } catch (error) {
       console.log("Error in login api -> ", error);

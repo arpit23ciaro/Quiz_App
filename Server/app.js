@@ -20,7 +20,7 @@ const server = createServer(app);
 const port = process.env.PORT || 4000;
 connect();
 cloudinaryConnect();
-
+app.set('trust proxy',1)
 app.use(
     cors({
       origin: process.env.FRONTEND_URL,

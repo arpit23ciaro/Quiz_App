@@ -104,10 +104,7 @@ const QuestionArea = ({ question, title, setTitle, handleSubmit,setQuestions ,su
         <>
             <div className='h-[63px] text-white fixed top-5 text-center w-full z-101 font-bold'>
                 <div className='flex justify-center items-center'>
-                    {titleToggle ?
-                        <MdEdit size={25} className=' cursor-pointer rotate-[290deg]' onClick={() => setTitleToggle((prev) => !prev)} />
-                        : <RiUpload2Fill size={25} className=' cursor-pointer' onClick={() => setTitleToggle((prev) => !prev)} />
-                    }
+                    <MdEdit size={25} className=' cursor-pointer rotate-[290deg]' onClick={() => setTitleToggle((prev) => !prev)} />
                     <input
                         className=' text-xl bg-inherit focus:outline-none w-40'
                         value={title}

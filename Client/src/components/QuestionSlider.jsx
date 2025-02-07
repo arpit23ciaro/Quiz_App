@@ -46,7 +46,7 @@ const QuestionSlider = ({questions,currentQuestionIndex,setCurrentQuestionIndex,
                 ) : (
                     <p className="text-xl text-richblack-5">No question Found! Please Add Question</p>
                 )}
-                <MdOutlineAddBox size={30} className=' absolute right-2 top-5 cursor-pointer' onClick={addSlide}/>
+                <MdOutlineAddBox size={30} className=' text-white absolute right-2 top-5 cursor-pointer' onClick={addSlide}/>
                 </div>
             </div>
             <div className='h-[60px] w-full bg-[#00837E]'></div>
